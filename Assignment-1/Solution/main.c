@@ -42,6 +42,8 @@ void addNode (struct Node** head, struct Node** tail, int companyId, int startTi
 }
 
 int main(){
+
+    
     struct Node* head[100000];
     struct Node* tail[100000];
     
