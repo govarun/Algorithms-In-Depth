@@ -1,5 +1,5 @@
 #OS junk files
 [Tt]humbs.db
-*.DS_Store
+**/.DS_Store
 
 
