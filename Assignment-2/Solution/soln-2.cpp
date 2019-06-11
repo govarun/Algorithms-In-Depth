@@ -79,7 +79,7 @@ bool isValid(int x, int y) {
 		return true;
 	}
 	return false;
-}
+} 
 
 void dfs(vpii & v1, int x, int y, char a[], bool vis[]) {
 	vis[getIndex(x, y)] = 1;
@@ -109,7 +109,7 @@ void dfs(vpii & v1, int x, int y, char a[], bool vis[]) {
 void solve(){
 	int k; cin >> n >> m >> k;
 	vpii v1;
-	char a[n * m];
+	char a[n * m + 1];
 	bool vis[n * m]; fill(vis);
 	pii root;
 	for (int i = 0; i < n; ++i) {
@@ -127,7 +127,7 @@ void solve(){
 
 	dfs(v1, root.ff, root.ss, a, vis);
 
-	for (int i = 0; i < k; ++i) {
+	for (int i = 1; i <= k; ++i) {
 		int ind = v1.size() - i;
 		a[getIndex(v1[ind].ff, v1[ind].ss)] = 'X';
 	}
@@ -137,7 +137,6 @@ void solve(){
 			cout << a[m * i + j];
 		}
 		cout << endl;
-
 	}
-   
+    
 }
