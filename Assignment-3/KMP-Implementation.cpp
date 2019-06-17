@@ -25,7 +25,6 @@ void createPrefixTable(string s, vector<int> &v1) {
             else {
                 i = 1;
             }
-
         }
     }
 }
@@ -43,7 +42,7 @@ bool checkPatternPresence (string sText, string sPattern, vector<int> v1) {
                 ++i;
                 ++a;
             }
-            if (a >= sizeText || i > sizePattern) {
+            if (a >= sizeText || (i + 1) >= sizePattern) {
                     break;
             }
             if (sPattern[i + 1] != sText[a] && i == 0) {
@@ -55,11 +54,10 @@ bool checkPatternPresence (string sText, string sPattern, vector<int> v1) {
         }    
     }
     return false;
-
-
 }
 
-int main(){
+int main() {
+    // For File IO
     // #ifndef ONLINE_JUDGE
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
@@ -73,21 +71,17 @@ int main(){
         cout << "Not Possible: Pattern larger than text";
         return 0;
     }
-
     // sText = " " + sText;
     sPattern = " " + sPattern;
-
     vector<int> v1(sizePattern + 1);
     for (int i = 0; i <= sizePattern; ++i) {
         v1[i] = 0;
     }
 
     createPrefixTable(sPattern, v1);
-
     if (checkPatternPresence(sText, sPattern, v1)) {
         cout << "Pattern found";
     } else {
         cout << "Pattern not found in text";
     }
-
 }
