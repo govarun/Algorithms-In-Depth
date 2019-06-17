@@ -69,7 +69,32 @@ int main(){
     return 0;
 }
 
+void createPrefixTable(String s, vector<int> &v1) {
+	int sizePattern = sPattern.size();
+	v1[0] = 0;
+	v1[1] = 0;
+	for (int i = 1; i < sizePattern; ++i) {
+		for (int j = 2; j <= sizePattern; ++j) {
+			if (s[j - 1] == s[i - 1])
+		}
+	}
+}
+
 void solve(){
-    
+    String sText; cin >> sText;
+    String sPattern; cin >> sPattern;
+    int sizeText = sText.size();
+    int sizePattern = sPattern.size();
+    sPattern = " " + sPattern;
+    cout << sPattern;
+    return;
+    vector<int> v1(sizePattern + 1);
+    createPrefixTable(sPattern, v1);
+
+
+
+
+
+
     
 }
